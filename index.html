@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jeu du Yams</title>
+	<meta charset="utf-8">
+	<link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body class="text-center">
+
+	<header>
+
+		<div id="ongletJoueur">
+			<button class="onglet" onclick="openPage('J1', this, '#de4538')">Joueur 1</button>
+			<button class="onglet" onclick="openPage('J2', this, '#4CAF50')" id="defaultOpen">Joueur 2</button>
+			<button class="onglet" onclick="openPage('J3', this, '#2196F3')">Joueur 3</button>
+			<button class="onglet" onclick="openPage('J4', this, '#ffad33')">Joueur 4</button>
+		</div>
+
+		<div id="J1" class="bandeauHaut">
+			<h1>Joueur 1</h1>
+			<p>à vous de jouer !</p>
+			<p class="nbRelance"></p>
+		</div>		
+		<div id="J2" class="bandeauHaut">
+			<h1>Joueur 2</h1>
+			<p>à vous de jouer !</p>
+			<p class="nbRelance"></p>
+		</div>		
+		<div id="J3" class="bandeauHaut">
+			<h1>Joueur 3</h1>
+			<p>à vous de jouer !</p>
+			<p class="nbRelance"></p>
+		</div>		
+		<div id="J4" class="bandeauHaut">
+			<h1>Joueur 4</h1>
+			<p>à vous de jouer !</p>
+			<p class="nbRelance"></p>
+		</div>
+	</header>
+
+	<section id="col-table" class="table-responsive">
+		<table class="table table-condensed">	
+			<thead>
+				<tr class="tHeader">
+					<th>Section Supérieure</th>
+					<th>Points</th>	
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="UN" class="possible">
+					<td>Un</td>
+					<td>
+						<button class="btn btn-danger">x</button>
+						<button class="btn btn-success"></button>
+					</td>
+				</tr>
+				<tr id="DEUX" class="possible">
+					<td>Deux</td>
+					<td>
+						<button class="btn btn-danger">x</button>
+						<button class="btn btn-success"></button>
+					</td>
+				</tr>
+				<tr id="TROIS" class="possible">
+					<td>Trois</td>
+					<td>
+						<button class="btn btn-danger">x</button>
+						<button class="btn btn-success"></button>
+					</td>
+				</tr>
+				<tr id="QUATRE" class="possible">
+					<td>Quatre</td>
+					<td>
+						<button class="btn btn-danger">x</button>
+						<button class="btn btn-success"></button>
+					</td>
+				</tr>
+				<tr id="CINQ" class="possible">
+					<td>Cinq</td>
+					<td>
+						<button class="btn btn-danger">x</button>
+						<button class="btn btn-success"></button>
+					</td>
+				</tr>
+				<tr id="SIX" class="possible">
+					<td>Six</td>
+					<td>
+						<button class="btn btn-danger">x</button>
+						<button class="btn btn-success"></button>
+					</td>
+				</tr>
+				<tr class="totaux">
+					<td><strong>Total</strong></td>
+					<td id="total"></td>
+				</tr>
+				<tr>
+					<td id="PRIME">63+ Prime</td>
+					<td></td>
+				</tr>
+				<tr class="totaux">
+					<td><strong>Total Section Sup.</strong></td>
+					<td id="totalSecSup"></td>
+				</tr>
+				<tr class="interligne">
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+			<thead>
+				<tr class="tHeader">
+					<th>Section Inférieure</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="BRELAN" class="possible">
+					<td>Brelan</td>
+					<td>
+						<button class="btn btn-danger">x</button>
+						<button class="btn btn-success"></button>
+					</td>
+				</tr>
+				<tr id="SUITE" class="possible">
+					<td>Suite</td>
+					<td>
+						<button class="btn btn-danger">x</button>
+						<button class="btn btn-success"></button>
+					</td>
+				</tr>
+				<tr id="FULL" class="possible">
+					<td>Full</td>
+					<td>
+						<button class="btn btn-danger">x</button>
+						<button class="btn btn-success"></button>
+					</td>
+				</tr>
+				<tr id="CARRE" class="possible">
+					<td>Carré</td>
+					<td>
+						<button class="btn btn-danger">x</button>
+						<button class="btn btn-success"></button>
+					</td>
+				</tr>
+				<tr id="YAMS" class="possible">
+					<td>Yams</td>
+					<td>
+						<button class="btn btn-danger">x</button>
+						<button class="btn btn-success"></button></td>
+					</tr>
+				<tr id="CHANCE" class="possible">
+					<td>Chance</td>
+					<td><button class="btn btn-success"></button></td>
+				</tr>
+
+				<tr class="totaux">
+					<td><strong>Total Section Inf.</strong></td>
+					<td id="totalSecInf"></td>
+				</tr>
+				<tr class="interligne">
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class="totaux">
+					<td><strong>Total Général</strong></td>
+					<td  id="totalGen"></td>
+				</tr>
+			</tbody>
+		</table>
+	</section>
+
+	<section id="col-middle">
+		<div id="plateauYams" class="row">
+
+			<div id="mesDes" class="col-xs-10 col-xs-offset-1">
+				<div class="desContainer">
+					<img class="img-responsive des lancable" id="des0" src="face1.png">
+				</div>
+				<div class="desContainer">
+					<img class="img-responsive des lancable" id="des1" src="face2.png">
+				</div>
+				<div class="desContainer">
+					<img class="img-responsive des lancable" id="des2" src="face3.png">
+				</div>
+				<div class="desContainer">
+					<img class="img-responsive des lancable" id="des3" src="face4.png">
+				</div>
+				<div class="desContainer">
+					<img class="img-responsive des lancable" id="des4" src="face5.png">
+				</div>
+			</div>
+
+			<div id="action" class="col-xs-10 col-xs-offset-1">
+				<button id="lancer" class="btn">Lancer !</button>
+				<button id="relancer" class="btn btn-primary">relancer</button>
+			</div>
+
+		</div>
+	</section>
+
+
+</body>
+
+</html>

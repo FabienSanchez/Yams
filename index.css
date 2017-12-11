@@ -1,0 +1,130 @@
+html {
+	background-color: lightgrey;
+	padding: 10px;
+}
+body {
+	font-family: 'ABeeZee';font-size: 1.7em;
+	background-color: #1a1a1a;
+	height: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid black;
+}
+section {
+	height: 85%;
+	float: left;
+}
+.table > tbody > tr > td, .table > thead > tr > th {
+	vertical-align: middle;
+}
+.table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th {
+	border-top: 1px solid #1a1a1a;
+}
+.table-condensed > tbody > tr > td {
+	padding: 0px;
+}
+td:nth-child(2) {
+	padding: 0;
+}
+tr {
+	height: 5%;
+}
+.interligne {
+	height: 10px;
+}
+.totaux {
+	background-color: #c1c1c1;
+}
+.table {
+	margin-bottom: 0;
+	background-color: #eee;
+	height: 100%;
+}
+#col-score {
+	background-color: transparent;	
+}
+#col-table, #col-score {
+	width: 25%;
+}
+#col-middle {
+	width: 50%;
+}
+#plateauYams {
+	background-color: #1a1a1a;
+	border-radius: 100%;
+	border: 30px solid white;
+	height: 85%;
+	width: 85%;
+	margin-left: 31%;
+	margin-top: 6.25%;
+}
+#action {
+	top: 45%;
+}
+#mesDes {
+	top: 40%;
+}
+.desContainer {
+	float: left;
+	margin-left: 1%;
+	margin-right: 1%;
+	width: 18%;
+	background-color: white;
+	border: 1px solid black;
+	border-radius: 20%;
+}
+#des0, #des1, #des2, #des3, #des4 {
+	width: 100%;
+	border-radius: 20%;
+}
+.unlancable {
+	border: 2px solid red;
+}
+.primeSuccess {
+	background-color: #dff0d8;
+}
+.efface {
+	background-color: red;
+	height: 100%;
+}
+.btn {
+	font-weight: 700;
+	font-size: 1em;
+}
+table .btn {
+	width: 77%;
+	padding: 0;
+}
+h1 {
+	margin: 0;
+}
+header { 
+	height: 15%;
+}
+.bandeauHaut {
+	height: 50%;
+	background-color: #f44336;
+}
+#ongletJoueur {
+	height: 50%;
+	width: 100%;
+}
+.onglet {
+  background-color: #eee;
+  color: black;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  width: 25%;
+  height: 100%;
+}
+.onglet:hover {
+  background-color: #ddd;
+}
+.activer, .activer:hover {
+	background-color: #f44336;
+}
+.table > thead > tr > th {
+	border-bottom: 0;
+}
